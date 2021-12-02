@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FinalProject.Migrations
 {
     [DbContext(typeof(TeamsContext))]
-    [Migration("20211202170102_PlayerMigration")]
-    partial class PlayerMigration
+    [Migration("20211202191353_TeamMigration")]
+    partial class TeamMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -50,10 +50,26 @@ namespace FinalProject.Migrations
                         new
                         {
                             Id = 1,
-                            description = "IGL",
+                            description = "Shahzeb 'ShahZaM' Khan (born October 8, 1993) is an American player who currently plays for Sentinels. He is a former Counter-Strike: Global Offensive player who is mostly known for his time in Cloud9, OpTic and Complexity Gaming. ",
                             imgURL = "https://liquipedia.net/commons/images/b/b4/Sentinels_ShahZaM_may_2021.png",
                             name = "Shahzeb 'ShahZaM' Khan",
                             team = "USA"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            description = "Ayaz Akhmetshin (born July 1, 2002) is a Russian player who is currently playing for Gambit Esports. He is a former Counter-Strike: Global Offensive player. ",
+                            imgURL = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fowcdn.net%2Fimg%2F60a0cf3460718.png&f=1&nofb=1",
+                            name = "Ayaz 'nAts' Akhmetshin",
+                            team = "Russia"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            description = "Kim 'stax' Gu-taek (born February 16, 2000) is a South Korean player who currently plays for Vision Strikers. He is a former professional Counter - Strike: Global Offensive player who was most known for his time in MVP PK.",
+                            imgURL = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fggscore.com%2Fmedia%2Flogo%2Fp21729.png&f=1&nofb=1",
+                            name = "Kim 'stax' Gu-taek",
+                            team = "Korea"
                         });
                 });
 
@@ -85,8 +101,24 @@ namespace FinalProject.Migrations
                         {
                             Id = 1,
                             country = "USA",
-                            description = "sl;kdjf",
-                            imgURL = "",
+                            description = "Sentinels is an American esports organization based in Los Angeles",
+                            imgURL = "https://upload.wikimedia.org/wikipedia/en/thumb/2/24/Sentinels_Logo.svg/1200px-Sentinels_Logo.svg.png",
+                            name = "Sentinels"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            country = "Europe",
+                            description = "Team Liquid is a professional esports organization founded in the Netherlands in 2000",
+                            imgURL = "https://www.gamereactor.eu/media/03/teamliquiddetails_3230353b.jpg",
+                            name = "Liquid"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            country = "Korea",
+                            description = "Vision Strikers is a Korean VALORANT team formed by a roster of former CS:GO players known as MVP PK.",
+                            imgURL = "https://owcdn.net/img/5f3c894bdf4ba.png",
                             name = "Sen"
                         });
                 });
