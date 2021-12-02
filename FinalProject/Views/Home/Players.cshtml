@@ -1,0 +1,51 @@
+﻿@using FinalProject.Models;
+@{
+    ViewData["Title"] = "Players";
+}
+
+<div class="container text-center">
+    <h1 class="display-4">The Players</h1>
+    <p class="h4">The players themselves add a personality to the game to either hate or love. I think its fun to invest oneself into someone’s performance just, like how every Cleveland Browns fan is tuning in to see how Baker Mayfield is doing. I’m adding a list of some key players</p>
+
+    <table class="table table-hover">
+        <thead>
+            <tr class="d-flex justify-content-center">
+                <th scope="col" class="col-1">Logo</th>
+                <th scope="col" class="col-5">Name</th>
+                <th scope="col" class="col-6">Team</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var player in Model)
+            {
+
+                <tr class="d-flex align-items-center justify-content-center">
+                    <td scope="row" class="col-1"><img src="@player.imgURL" alt="..." class="img-thumbnail img-responsive"></td>
+                    <td class="col-5 align-middle">@player.name</td>
+                    <td class="col-6 align-middle">@player.team</td>
+                </tr>
+
+                <tr class="text-left">
+                    <td colspan="3"><b>Description:</b> @player.description</td>
+                </tr>
+
+            }
+            <tr>
+            </tr>
+        </tbody>
+    </table>
+    <form method="post" enctype="multipart/form-data" asp-controller="Data" asp-action="newPlayer">
+
+        <input type="text" name="imgURL" placeholder="Img URL">
+
+        <input type="text" name="name" placeholder="Name">
+
+        <input type="text" name="team" placeholder="Team">
+
+        <input type="text" name="description" placeholder="Description">
+
+        <input type="submit" class="btn btn-primary" value="Submit">
+
+    </form>
+
+</div>

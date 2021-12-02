@@ -1,0 +1,54 @@
+﻿@using FinalProject.Models;
+
+@{
+    ViewData["Title"] = "Teams";
+}
+
+<div class="container text-center">
+    <h1 class="display-4">The Teams</h1>
+    <p class="h4">
+        The best part about any games competitive scene is the teams. Every team has a story, gameplay style, and personality that fans can latch onto. In this page I will create a table that will read from a DB for the sake of the assignment.
+    </p>
+
+    <table class="table table-hover">
+        <thead>
+            <tr class="d-flex justify-content-center">
+                <th scope="col" class="col-1">Logo</th>
+                <th scope="col" class="col-5">Name</th>
+                <th scope="col" class="col-6">Country</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var team in Model)
+            {
+
+            <tr class="d-flex align-items-center justify-content-center">
+                <td scope="row" class="col-1"><img src="@team.imgURL" alt="..." class="img-thumbnail img-responsive"></td>
+                <td class="col-5 align-middle">@team.name</td>
+                <td class="col-6 align-middle">@team.country</td>
+            </tr>
+
+                <tr class="text-left">
+                    <td colspan="3"><b>Description:</b> @team.description</td>
+                </tr>
+
+            }
+            <tr>
+            </tr>
+        </tbody>
+    </table>
+    <form method="post" enctype="multipart/form-data" asp-controller="Data" asp-action="newTeam">
+
+            <input type="text" name="imgURL" placeholder="Img URL">
+
+            <input type="text" name="name" placeholder="Name">
+
+            <input type="text" name="country" placeholder="Country">
+
+            <input type="text" name="description" placeholder="Description">
+
+            <input type="submit" class="btn btn-primary" value="Submit">
+
+    </form>
+
+</div>
